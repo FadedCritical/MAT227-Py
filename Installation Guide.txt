@@ -1,0 +1,19 @@
+How to install these programs onto your TI-84 Plus CE Python:
+
+Go to https://education.ti.com/en/products/computer-software/ti-connect-ce-sw
+or search up "TI Connect CE software" and install the software for Windows or Mac
+
+Once installed open the software and connect your TI-84 via the connection cable
+that came with your calculator to the computer. If the calculator is not connected
+to your computer then it wont appear in the "CONNECTED CALCULATORS" box.
+
+With your TI-84 connected, click on the calculator that appears in the app.
+
+Click on the "Actions" button at the top left of your screen and then select
+"Add Files from Computer" and add the files you downloaded from the repository.
+
+Once completed, you can now unplug your TI-84 from the computer.
+
+To access the installed programs onto the computer, turn the calculator on. 
+Then press "prgm" and select "python", from there you can now select and run the
+python files on your calculator.
