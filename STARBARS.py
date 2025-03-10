@@ -13,9 +13,9 @@ def comb(y,x):
 
 i = int(input("Items: "))
 s = int(input("Stars: "))
-b = int(input("Bars: "))
+b = int(input("Bars: ")) - 1
 
 if (i != 0):
-    print(comb(i + s, b - 1))
+    print(comb(i + s, b))
 else:
     print(comb(s + b, b))
