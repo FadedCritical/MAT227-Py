@@ -11,10 +11,10 @@ def recurrence1(x, y, z, xx):
     while(x != z):
         x += 1
         result = pow(mult, p1) * pow(result, xx) + pow(add, p2)
-        print(result)
-        
+    print(result)
+            
 x = float(input("known f(?): "))
-y = float(input("f(%x) = ?:  " % (x)))
+y = float(input("f(%f) = ?:  " % (x)))
 z = float(input("solve f(?): "))
 xx = float(input("To power of: "))
 
