@@ -12,7 +12,10 @@ def comb(y,x):
     return fact(y) / (fact(x) * fact(y-x))
 
 i = int(input("Items: "))
-s = int(input("Stars: ")) - 1
+s = int(input("Stars: "))
 b = int(input("Bars: "))
 
-print(comb(i + s, b))
+if (i != 0):
+    print(comb(i + s, b - 1))
+else:
+    print(comb(s + b, b))
