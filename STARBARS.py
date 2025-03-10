@@ -13,7 +13,7 @@ def comb(y,x):
 
 i = int(input("Items: "))
 s = int(input("Stars: "))
-b = int(input("Bars: ")) - 1
+b = int(input("Bars: "))
 
 if (i != 0):
     print(comb(i + s, b))
