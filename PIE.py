@@ -13,9 +13,14 @@ def comb(y,x):
 
 s = int(input("Stars: "))
 b = int(input("Bars: "))
-i = int(input("Items: "))
+e = int(input("Item Limit: ")) + 1
 
-if (i != 0):
-    print(comb(i + s, b))
-else:
-    print(comb(s + b, b))
+output = comb(s + b, b)
+
+for i in range(e):
+    if(i % 2 == 0):
+        output -= comb(b + 1, i + 1) * comb((s + b) - (e * (i + 1)), b)
+    else:
+        output += comb(b + 1, i + 1) * comb((s + b) - (e * (i + 1)), b)
+
+print(output)
