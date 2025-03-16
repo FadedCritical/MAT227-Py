@@ -12,18 +12,24 @@ def comb(y,x):
     return fact(y) / (fact(x) * fact(y-x))
 
 e = int(input("How many elements?: "))
-fixed = bool(int(input("Fixed?: ")))
+n = int(input("How many fixed elements?: "))
+ee = e - n
+output = 0
 
-if fixed:
-    e -= 1
-output = fact(e)
-
-for i in range(e):
-    if(i % 2 == 0):
-        output -= comb(e, i + 1) * fact(e - (i + 1))
-    else:
-        output += comb(e, i + 1) * fact(e - (i + 1))
-if fixed:
-    print(output * (e + 1))
+if n == 0:
+    output = fact(e)
+    for i in range(e):
+        if(i % 2 == 0):
+            output -= comb(e, i + 1) * fact(e - (i + 1))
+        else:
+            output += comb(e, i + 1) * fact(e - (i + 1))
 else:
-    print(output)
+    output = fact(ee)
+    for i in range(ee):
+        if(i % 2 == 0):
+            output -= comb(ee, i + 1) * fact(ee - (i + 1))
+        else:
+            output += comb(ee, i + 1) * fact(ee - (i + 1))
+    output *= comb(e, n)
+
+print(output)
