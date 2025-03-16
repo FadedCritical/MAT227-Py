@@ -1,7 +1,5 @@
 #Created by
 #Ronald Armistead-Tyler
-from math import floor
-
 def fact(num):
     if(num==1 or num == 0):
         return 1
@@ -17,21 +15,23 @@ s = int(input("Stars: "))
 b = int(input("Bars: "))
 e = int(input("Item Limit: ")) + 1
 
-output = comb(s + b, b)
-if e - 1 > 0 : 
+starbars = s + b
+output = comb(starbars, b)
+if e - 1 > 0 :
     for i in range(e):
         if(i % 2 == 0):
-            output -= comb(b + 1, i + 1) * comb((s + b) - (e * (i + 1)), b)
+            output -= comb(b + 1, i + 1) * comb((starbars) - (e * (i + 1)), b)
         else:
-            output += comb(b + 1, i + 1) * comb((s + b) - (e * (i + 1)), b)
+            output += comb(b + 1, i + 1) * comb((starbars) - (e * (i + 1)), b)
+    print(output)
 elif e - 1 == 0:
-    bins = int(input("Bins: "))
-    binVolume = int(input("Items per bin: "))
-    if bins > 0:
-        for i in range(floor((s + b) / bins) - 1):
-            if(i % 2 == 0):
-                output -= comb(b + 1, i + 1) * comb((s + b) - ((binVolume + 1) * (i + 1)), b)
-            else:
-                output += comb(b + 1, i + 1) * comb((s + b) - ((binVolume + 1) * (i + 1)), b)
-
-print(round(output))
+    itemsPerDistribution = int(input("Items per Distribution: "))
+    i = 0
+    while(starbars - (itemsPerDistribution + 1) >= b):
+        starbars -= itemsPerDistribution + 1
+        if(i % 2 == 0):
+            output -= comb(b + 1, i + 1) * comb(starbars, b)
+        elif(i % 2 == 1):
+            output += comb(b + 1, i + 1) * comb(starbars, b)
+        i += 1
+    print(output)
