@@ -5,11 +5,11 @@
 #{Law of Cosines}
 #a^2 = b^2 + C^2 - 2bc * cos(A)
 #{Law of Sines}
-#arcsin(sin(A) * b / a)
+#B =  arcsin(sin(A) * b / a)
 
 from math import sqrt, sin, cos, degrees, radians, asin
 
-angleA = radians(int(input("Angle A: ")))
+angleA = radians(float(input("Angle A: ")))
 sideB = float(input("Side B: "))
 sideC = float(input("Side C: "))
 
