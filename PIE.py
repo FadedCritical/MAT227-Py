@@ -13,18 +13,18 @@ def comb(y,x):
 
 s = int(input("Stars: "))
 b = int(input("Bars: "))
-e = int(input("Item Limit: ")) + 1
+limit = int(input("Item Limit: ")) + 1
 
 starbars = s + b
 output = comb(starbars, b)
-if e - 1 > 0 :
-    for i in range(e):
+if limit - 1 > 0 :
+    for i in range(limit-2):
         if(i % 2 == 0):
-            output -= comb(b + 1, i + 1) * comb((starbars) - (e * (i + 1)), b)
+            output -= comb(b + 1, i + 1) * comb((starbars) - (limit * (i + 1)), b)
         else:
-            output += comb(b + 1, i + 1) * comb((starbars) - (e * (i + 1)), b)
+            output += comb(b + 1, i + 1) * comb((starbars) - (limit * (i + 1)), b)
     print(output)
-elif e - 1 == 0:
+elif limit - 1 == 0:
     itemsPerDistribution = int(input("Items per Distribution: "))
     i = 0
     while(starbars - (itemsPerDistribution + 1) >= b):
