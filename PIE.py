@@ -35,3 +35,4 @@ elif limit - 1 == 0:
             output += comb(b + 1, i + 1) * comb(starbars, b)
         i += 1
     print(output)
+    print("Loops:", i + 1)
